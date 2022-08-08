@@ -7,8 +7,8 @@ on:
       - dev
 env:
   REGISTRY_NAME: Apistone3
-  CLUSTER_NAME: TestApistone
-  CLUSTER_RESOURCE_GROUP: APISTONE
+  CLUSTER_NAME: API3
+  CLUSTER_RESOURCE_GROUP: Apistone_team3
   
   
 
@@ -87,8 +87,8 @@ jobs:
           id: set-context
           uses: azure/aks-set-context@v3
           with:
-            resource-group: APISTONE 
-            cluster-name: TestApistone
+            resource-group: Apistone_team3 
+            cluster-name: API3
         - name: Setup kubectl
           id: install-kubectl
           uses: azure/setup-kubectl@v3

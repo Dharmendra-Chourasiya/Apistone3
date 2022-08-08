@@ -43,18 +43,6 @@ jobs:
         host: ${{ secrets.SONARQUBE_HOST }}
         login: ${{ secrets.SONARQUBE_TOKEN }}
         
-    - name: Login
-      uses: atlassian/gajira-login@master
-      env:
-        JIRA_BASE_URL: ${{ secrets.JIRA_BASEURL }}
-        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER }}
-        JIRA_API_TOKEN: ${{ secrets.JIRA_TOKEN }}
-        
-    - name: Transition to qa
-      uses: atlassian/gajira-transition@master
-      with:
-        issue: ${{ github.head_ref }}
-        transition: "Ready For QA Deployment"
   build-and-deploy:
         needs: test-transition-issue
         runs-on: ubuntu-latest

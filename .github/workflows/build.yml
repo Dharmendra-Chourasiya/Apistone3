@@ -1,8 +1,9 @@
 name: Build
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches:
-      - master # or the name of your main branch
+      - dev
 jobs:
   build:
     name: Build
